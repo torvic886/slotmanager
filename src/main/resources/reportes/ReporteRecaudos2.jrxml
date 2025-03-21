@@ -1,0 +1,235 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="ReporteRecaudos2" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SlotManager"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" bold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18.0" bold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" bold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle mode="Opaque" backcolor="#EEEFF0">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="tableDataset" uuid="a524ab14-e1d1-4675-8a29-f4bae411cadd">
+		<query language="sql"><![CDATA[]]></query>
+	</dataset>
+	<dataset name="Dataset1" uuid="2ddecf54-ca34-499e-a0fa-9a4e2a79fb27">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SlotManager"/>
+		<query language="SQL"><![CDATA[SELECT slotmanager.recaudos.fecha,
+	slotmanager.maquinas.nombre,
+	slotmanager.recaudos.contador_in,
+	slotmanager.recaudos.contador_out,
+    slotmanager.historial_recaudos.ganancia_socio1
+FROM slotmanager.recaudos
+	INNER JOIN slotmanager.maquinas ON slotmanager.recaudos.maquina_id = slotmanager.maquinas.id 
+    INNER JOIN slotmanager.historial_recaudos ON slotmanager.recaudos.maquina_id = slotmanager.historial_recaudos.maquina_id ]]></query>
+		<field name="fecha" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+			<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+		</field>
+		<field name="nombre" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="maquinas"/>
+		</field>
+		<field name="contador_in" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="contador_in"/>
+			<property name="com.jaspersoft.studio.field.label" value="contador_in"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+		</field>
+		<field name="contador_out" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="contador_out"/>
+			<property name="com.jaspersoft.studio.field.label" value="contador_out"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+		</field>
+		<field name="ganancia_socio1" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="ganancia_socio1"/>
+			<property name="com.jaspersoft.studio.field.label" value="ganancia_socio1"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="historial_recaudos"/>
+		</field>
+		<group name="fecha">
+			<expression><![CDATA[$F{fecha}]]></expression>
+		</group>
+		<group name="nombre">
+			<expression><![CDATA[$F{nombre}]]></expression>
+		</group>
+		<group name="contador_in">
+			<expression><![CDATA[$F{contador_in}]]></expression>
+		</group>
+		<group name="contador_out">
+			<expression><![CDATA[$F{contador_out}]]></expression>
+		</group>
+		<group name="ganancia_socio1">
+			<expression><![CDATA[$F{ganancia_socio1}]]></expression>
+		</group>
+	</dataset>
+	<query language="sql"><![CDATA[SELECT slotmanager.recaudos.fecha,
+	slotmanager.maquinas.nombre,
+	slotmanager.recaudos.contador_in,
+	slotmanager.recaudos.contador_out,
+    slotmanager.historial_recaudos.ganancia_socio1
+FROM slotmanager.recaudos
+	INNER JOIN slotmanager.maquinas ON slotmanager.recaudos.maquina_id = slotmanager.maquinas.id 
+    INNER JOIN slotmanager.historial_recaudos ON slotmanager.recaudos.maquina_id = slotmanager.historial_recaudos.maquina_id ]]></query>
+	<field name="fecha" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="maquinas"/>
+	</field>
+	<field name="contador_in" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="contador_in"/>
+		<property name="com.jaspersoft.studio.field.label" value="contador_in"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+	</field>
+	<field name="contador_out" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="contador_out"/>
+		<property name="com.jaspersoft.studio.field.label" value="contador_out"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="recaudos"/>
+	</field>
+	<field name="ganancia_socio1" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="ganancia_socio1"/>
+		<property name="com.jaspersoft.studio.field.label" value="ganancia_socio1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="historial_recaudos"/>
+	</field>
+	<variable name="TOTAL_GANANCIA_SOCIO" calculation="Sum" class="java.lang.Double">
+		<expression><![CDATA[$F{ganancia_socio1}]]></expression>
+	</variable>
+	<title height="157" splitType="Stretch">
+		<element kind="staticText" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a" x="6" y="130" width="84" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[Fecha:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="line" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246" x="0" y="80" width="556" height="1">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="139ebe8d-25b0-411e-986c-270015400874" x="432" y="130" width="84" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[Neto:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8" x="371" y="10" width="50" height="20" fontName="Comforta" hTextAlign="Right">
+			<text><![CDATA[Date:]]></text>
+			<box rightPadding="4"/>
+		</element>
+		<element kind="textField" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979" x="421" y="10" width="128" height="20" fontName="Comforta" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="image" uuid="94883631-a913-43e2-b182-ab8d77d0181e" x="0" y="0" width="80" height="80" evaluationTime="Column" hImageAlign="Center">
+			<expression><![CDATA["C:/Users/torvi/JaspersoftWorkspace/invoice_logo.png"]]></expression>
+		</element>
+		<element kind="textField" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b" x="421" y="30" width="84" height="20" fontName="Comforta" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA["INV0001"]]></expression>
+		</element>
+		<element kind="staticText" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678" x="371" y="30" width="50" height="20" fontName="Comforta" hTextAlign="Right">
+			<text><![CDATA[Invoice #]]></text>
+			<box rightPadding="4"/>
+		</element>
+		<element kind="staticText" uuid="e622555d-198b-4ccd-a4a1-c59c53304058" x="95" y="0" width="210" height="25" fontName="Comforta" fontSize="19.0" bold="true">
+			<text><![CDATA[TorvicSoft]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="b8cc42fd-b569-497d-834d-7e854040ad18" x="95" y="55" width="205" height="15" fontName="Comforta">
+			<text><![CDATA[3136562635]]></text>
+		</element>
+		<element kind="staticText" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde" x="95" y="25" width="205" height="15" fontName="Comforta">
+			<text><![CDATA[Street address]]></text>
+		</element>
+		<element kind="staticText" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e" x="95" y="40" width="205" height="15" fontName="Comforta">
+			<text><![CDATA[Armenia, Quindio, 630001]]></text>
+		</element>
+		<element kind="staticText" uuid="65b97bbe-07aa-446a-a24a-4af10a25cc42" x="120" y="130" width="84" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[Maquina:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="d517c17f-d39c-481f-8cd4-a9c96bd7ae7b" x="230" y="130" width="84" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[In:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="42cc4025-3a88-445e-bd26-2f6e5ce38f9c" x="332" y="130" width="84" height="25" fontSize="16.0" bold="true">
+			<text><![CDATA[Out:]]></text>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+	</title>
+	<detail>
+		<band height="40">
+			<element kind="textField" uuid="a2c4dba8-d6ce-4e66-8a62-bea75f2e5cdc" x="6" y="9" width="100" height="30" fontName="Comforta" fontSize="12.0" pattern="MMMM d, yyyy" bold="true" vTextAlign="Middle">
+				<expression><![CDATA[$F{fecha}]]></expression>
+			</element>
+			<element kind="textField" uuid="5dad5e63-14ac-4633-9d87-ddb1cdfca165" x="120" y="10" width="84" height="30" fontName="Comforta" fontSize="12.0" bold="true" vTextAlign="Middle">
+				<expression><![CDATA[$F{nombre}]]></expression>
+			</element>
+			<element kind="textField" uuid="d1f6f78c-31e4-4787-9c0c-2b9190ed09fd" x="230" y="10" width="86" height="30" fontName="Comforta" fontSize="12.0" pattern="###0.###;###0.###-" bold="true" vTextAlign="Middle">
+				<expression><![CDATA[$F{contador_in}]]></expression>
+			</element>
+			<element kind="textField" uuid="46ef20a6-d999-4942-bc34-b6886fa0f6fb" x="332" y="10" width="84" height="30" fontName="Comforta" fontSize="12.0" pattern="¤###0.###;¤(###0.###-)" bold="true" vTextAlign="Middle">
+				<expression><![CDATA[$F{contador_out}]]></expression>
+			</element>
+			<element kind="textField" uuid="156aa8c7-c5d7-4a0a-8674-30067a71f32b" x="432" y="10" width="124" height="30" fontName="Comforta" fontSize="12.0" pattern="¤#,##0.##;¤-#,##0.##" bold="true" vTextAlign="Middle">
+				<expression><![CDATA[$F{ganancia_socio1}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<summary height="85">
+		<element kind="textField" uuid="bc306f10-cb21-453d-b2fa-f6f54bba2718" x="432" y="13" width="110" height="21" fontName="Comforta" fontSize="12.0" pattern="¤#,##0.##;¤-#,##0.##" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$V{TOTAL_GANANCIA_SOCIO}]]></expression>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="751f736c-d71c-4309-b0c7-996364a1e519" x="307" y="13" width="124" height="21" fontSize="16.0" bold="true" vTextAlign="Middle">
+			<text><![CDATA[Total :]]></text>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="2220d8d2-5b70-412e-b307-7f154cc6d5af" x="307" y="35" width="95" height="21" fontSize="16.0" bold="true">
+			<text><![CDATA[Transporte:]]></text>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="16b58e38-7b9d-4732-aeb0-f8c0aee803b1" x="432" y="35" width="100" height="21" fontName="Comforta" fontSize="12.0" bold="true" vTextAlign="Middle">
+			<text><![CDATA[- $30.000]]></text>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="aa0d4a01-0525-431c-94f5-940c180e9b4b" x="307" y="57" width="123" height="21" fontSize="16.0" bold="true">
+			<text><![CDATA[Total Recaudo:]]></text>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="textField" uuid="9050bd11-b69a-4d31-ba12-963bc64f9cee" x="432" y="57" width="110" height="21" fontName="Comforta" fontSize="12.0" pattern="¤#,##0.##;¤-#,##0.##" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$V{TOTAL_GANANCIA_SOCIO}-30000]]></expression>
+			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="line" uuid="866b12e3-1312-46f6-ab3d-b4a0acdc740f" x="420" y="7" width="80" height="1">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<property name="com.jaspersoft.studio.unit.height" value="px"/>
+	</summary>
+</jasperReport>
