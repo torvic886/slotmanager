@@ -6,8 +6,8 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Table(name = "historial_recaudos")
 public class HistorialRecaudo {
 
