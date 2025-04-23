@@ -4,9 +4,11 @@ import com.slotmanager.entity.Usuario;
 import com.slotmanager.repository.UsuarioRepository;
 import com.slotmanager.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
+
 
 @Service
 public class AuthService {
@@ -31,7 +33,8 @@ public class AuthService {
             }
         }
         
-        throw new RuntimeException("Credenciales incorrectas");
+         throw new BadCredentialsException("Credenciales incorrectas");
+//        throw new RuntimeException("Credenciales incorrectas");
     }
 
     public Usuario register(Usuario usuario) {
