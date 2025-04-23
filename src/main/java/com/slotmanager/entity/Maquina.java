@@ -2,7 +2,7 @@ package com.slotmanager.entity;
 
 import jakarta.persistence.*;
 import java.util.List;  // 🔥 IMPORTANTE: Agregar esta línea
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 
 
 @Entity
